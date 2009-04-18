@@ -1,7 +1,7 @@
 rails-nginx-passenger-ubuntu
 ============================
 
-My notes to set up a simple production server with ubuntu, nginx, passenger and mysql for rails.
+My notes on setting up a simple production server with ubuntu, nginx, passenger and mysql for rails.
 
 Aliases
 -------
