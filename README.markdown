@@ -50,6 +50,19 @@ Install mysql
 This should be installed before Ruby Enterprise Edition becouse that will install the mysql gem.
 
     sudo apt-get install mysql-server libmysqlclient15-dev
+    
+    
+Gemrc
+-------
+
+Add the following lines to ~/.gemrc, this will speed up gem installation and prevent rdoc and ri from being generated, this is not nessesary in the production environment.
+
+    ---
+    :sources:
+    - http://gems.rubyforge.org
+    - http://gems.github.com
+    gem: --no-ri --no-rdoc
+
 
 Ruby Enterprise Edition
 ------------------------
