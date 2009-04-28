@@ -159,11 +159,35 @@ If you want, reboot and see so the webserver is starting as it should.
 Installning ImageMagick and RMagick
 -----------------------------------
 
-If you want to install ImageMagick. I used MiniMagick that shell-out to the mogrify command, worked really well for me.
+If you want to install the latest version of ImageMagick. I used MiniMagick that shell-out to the mogrify command, worked really well for me.
 
-    sudo apt-get install imagemagick
-    sudo apt-get install libmagick9-dev
-    sudo gem install rmagick
+    # If you already installed imagemagick from apt-get
+    sudo apt-get remove imagemagick
+
+    sudo apt-get install libperl-dev gcc libjpeg62-dev libbz2-dev libtiff4-dev libwmf-dev libz-dev libpng12-dev libx11-dev libxt-dev libxext-dev libxml2-dev libfreetype6-dev liblcms1-dev libexif-dev perl libjasper-dev libltdl3-dev graphviz gs-gpl pkg-config
+
+Use wget to grab the source from ImageMagick.org.
+
+Once the source is downloaded, uncompress it:
+
+
+    tar xvfz ImageMagick.tar.gz
+
+
+Now configure and make:
+
+    cd ImageMagick-6.5.0-0
+    ./configure
+    make
+    sudo make install
+
+To avoid an error such as:
+
+convert: error while loading shared libraries: libMagickCore.so.2: cannot open shared object file: No such file or directory
+
+    sudo ldconfig
+
+Install RMagick
  
     sudo /opt/ruby-enterprise-1.8.6-20090421/bin/ruby /opt/ruby-enterprise-1.8.6-20090421/bin/gem install rmagick
 
