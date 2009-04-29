@@ -78,20 +78,20 @@ Download and install Ruby Enterprise Edition
     wget http://rubyforge.org/frs/download.php/51100/ruby-enterprise-1.8.6-20090201.tar.gz
     tar xvfz ruby-enterprise-1.8.6-20090201.tar.gz 
     rm ruby-enterprise-1.8.6-20090201.tar.gz 
-    ruby-enterprise-1.8.6-20090201/
+    cd ruby-enterprise-1.8.6-20090201/
     sudo ./installer
 
 Add Ruby Enterprise bin to PATH
 
-    echo "export PATH=/opt/ruby-enterprise-1.8.6-20090201/bin:$PATH" >> .profile
-
+    echo "export PATH=/opt/ruby-enterprise-1.8.6-20090201/bin:$PATH" >> ~/.profile && . ~/.profile
+    
 Verify the ruby installation
 
     ruby -v
     ruby 1.8.6 (2008-08-08 patchlevel 286) [i686-linux]
 
 
-Installning git
+Installing git
 ----------------
 
     sudo apt-get install git-core
@@ -111,7 +111,7 @@ When finished, verify nginx source code is located under /tmp
     drwxrwxrwx 7   1169   1169    4096 2009-04-18 17:56 pcre-7.8
     -rw-r--r-- 1 root   root   1168513 2009-04-18 17:51 pcre-7.8.tar.gz
     
-Run the passenger-install-nginx-module once more if you want to add ---with-http_ssl_module 
+Run the passenger-install-nginx-module once more if you want to add --with-http_ssl_module 
 
     $ sudo /opt/ruby-enterprise-1.8.6-20090201/bin/passenger-install-nginx-module
     
