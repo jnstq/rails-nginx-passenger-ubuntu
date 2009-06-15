@@ -5,10 +5,15 @@ My notes on setting up a simple production server with ubuntu, nginx, passenger 
 
 Aliases
 -------
-    
-    echo "alias ll='ls -l'" >> ~/.bash_aliases
 
+    echo "alias ll='ls -l'" >> ~/.bash_aliases
+    
 edit .bashrc and uncomment the loadig of .bash_aliases
+
+If you have trouble with PATH that changes when doing sudo, see http://stackoverflow.com/questions/257616/sudo-changes-path-why then add the following line to the same file
+
+    alias sudo='sudo env PATH=$PATH'
+    
 
 Update and upgrade the system
 -------------------------------
