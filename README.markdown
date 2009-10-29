@@ -87,7 +87,7 @@ Download and install Ruby Enterprise Edition
     sudo ./installer
     
     
-Change taret folder to /opt/ruby for easier upgrade later on
+Change target folder to /opt/ruby for easier upgrade later on
 
 Add Ruby Enterprise bin to PATH
 
