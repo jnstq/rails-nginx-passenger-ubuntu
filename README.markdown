@@ -8,11 +8,11 @@ Aliases
 
     echo "alias ll='ls -l'" >> ~/.bash_aliases
     
-edit .bashrc and uncomment the loadig of .bash_aliases
+edit .bashrc and uncomment the loading of .bash_aliases
 
 If you have trouble with PATH that changes when doing sudo, see http://stackoverflow.com/questions/257616/sudo-changes-path-why then add the following line to the same file
 
-    alias sudo='sudo env PATH=$PATH'
+    echo "alias sudo='sudo env PATH=$PATH'" >> ~/.bash_aliases
     
 
 Update and upgrade the system
@@ -80,20 +80,23 @@ Install package required by ruby enterprise, C compiler, Zlib development header
 
 Download and install Ruby Enterprise Edition
 
-    wget http://rubyforge.org/frs/download.php/51100/ruby-enterprise-1.8.6-20090201.tar.gz
-    tar xvfz ruby-enterprise-1.8.6-20090201.tar.gz 
-    rm ruby-enterprise-1.8.6-20090201.tar.gz 
-    cd ruby-enterprise-1.8.6-20090201/
+    wget http://rubyforge.org/frs/download.php/66162/ruby-enterprise-X.X.X-ZZZZ.ZZ.tar.gz
+    tar xvfz ruby-enterprise-X.X.X-ZZZZ.ZZ.tar.gz 
+    rm ruby-enterprise-X.X.X-ZZZZ.ZZ.tar.gz 
+    cd ruby-enterprise-X.X.X-ZZZZ.ZZ/
     sudo ./installer
+    
+    
+Change taret folder to /opt/ruby for easier upgrade later on
 
 Add Ruby Enterprise bin to PATH
 
-    echo "export PATH=/opt/ruby-enterprise-1.8.6-20090201/bin:$PATH" >> ~/.profile && . ~/.profile
+    echo "export PATH=/opt/ruby/bin:$PATH" >> ~/.profile && . ~/.profile
     
 Verify the ruby installation
 
     ruby -v
-    ruby 1.8.6 (2008-08-08 patchlevel 286) [i686-linux]
+    ruby 1.8.7 (2009-06-12 patchlevel 174) [x86_64-linux], MBARI 0x6770, Ruby Enterprise Edition 20090928
 
 
 Installing git
@@ -104,7 +107,7 @@ Installing git
 Nginx
 -------
 
-    sudo /opt/ruby-enterprise-1.8.6-20090201/bin/passenger-install-nginx-module
+    sudo /opt/ruby/bin/passenger-install-nginx-module
 
 Select option 1. Yes: download, compile and install Nginx for me. (recommended)
 
@@ -118,7 +121,7 @@ When finished, verify nginx source code is located under /tmp
     
 Run the passenger-install-nginx-module once more if you want to add --with-http_ssl_module 
 
-    $ sudo /opt/ruby-enterprise-1.8.6-20090201/bin/passenger-install-nginx-module
+    $ sudo /opt/ruby/bin/passenger-install-nginx-module
     
 Select option 2. No: I want to customize my Nginx installation. (for advanced users)
 
@@ -194,7 +197,7 @@ convert: error while loading shared libraries: libMagickCore.so.2: cannot open s
 
 Install RMagick
  
-    sudo /opt/ruby-enterprise-1.8.6-20090421/bin/ruby /opt/ruby-enterprise-1.8.6-20090421/bin/gem install rmagick
+    sudo /opt/ruby/bin/ruby /opt/ruby/bin/gem install rmagick
 
 Test a rails applicaton with nginx
 ----------------------------------
@@ -228,18 +231,6 @@ Restart nginx
 
     sudo /etc/init.d/nginx restart
     
-Check you ipadress and see if you can acess the rails application
+Check you ipaddress and see if you can acess the rails application
         
-
-
-
-
-
-
-
-
-
-
-
-
 
